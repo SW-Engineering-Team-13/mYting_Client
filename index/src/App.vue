@@ -1,25 +1,20 @@
 <template>
   <v-app>
-    <v-navigation-drawer app>
-      
-    </v-navigation-drawer>
-
-    <v-app-bar app>
+    <v-app-bar app
+      height="80">
       <Header></Header>
     </v-app-bar>
 
-    <!-- Sizes your content based upon application components -->
     <v-main>
-
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid>
-
-        <!-- If using vue-router -->
+      <v-container 
+        fluid
+        >
         <router-view></router-view>
       </v-container>
     </v-main>
 
-    <v-footer app>
+    <v-footer
+      max-height="50">
       <Footer></Footer>
     </v-footer>
   </v-app>
