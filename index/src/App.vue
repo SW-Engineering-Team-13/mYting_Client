@@ -1,43 +1,28 @@
 <!-- 
       - Vue 애플리케이션의 최상위 컴포넌트
 -->
+/* eslint-disable */
+
 <template>
-  <div id="app">
-    <h1>To-Do List</h1>
-    <ul>
-      <to-do-form></to-do-form>
-      <li v-for="item in ToDoItems" :key="item.id">
-        <to-do-item 
-          :label="item.label" 
-          :done="item.done"
-          :id="item.id"></to-do-item>
-      </li>
-    </ul>
-  </div>
+  <Header></Header>
+  <Main></Main>
+  <Footer></Footer>
 </template>
 
 <script>
-import ToDoItem from './components/ToDoItem.vue';
-import ToDoForm from './components/ToDoForm.vue';
-import uniqueId from 'lodash.uniqueid';
+import Header from './components/common/Header.vue';
+import Footer from './components/common/Footer.vue';
+import Main from './components/common/Main.vue';
 
 export default {
   name: 'App',
   components: {
-    ToDoItem,
-    ToDoForm
-  },
-  data(){
-    return {
-      ToDoItems: [
-        { id: uniqueId('todo-'), label: 'Learn Vue', done: false },
-        { id: uniqueId('todo-'), label: 'Create a Vue project with the CLI', done: true },
-        { id: uniqueId('todo-'), label: 'Have fun', done: true },
-        { id: uniqueId('todo-'), label: 'Create a to-do list', done: false },
-      ]
-    }
+    Header,
+    Footer,
+    Main
   }
 }
+
 </script>
 
 <style>
@@ -47,6 +32,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
