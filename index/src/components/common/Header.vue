@@ -1,16 +1,16 @@
 <template>
     <header>
-        <h1><a href='#' class='logo'><img alt='mYting logo' src = '../../assets/logo.png' width='80'></a></h1>
+        <h1><router-link to="/"><img alt='mYting logo' src = '../../assets/logo.png' width='80'></router-link></h1>
         <div class="menuWrap">
             <ul class="menu" style="position:absolute; top: -10px">
-                <li><a href="javascript:;">프로필</a></li>
-                <li><a href="javascript:;">로그아웃</a></li>
+                <li><router-link to="/login">프로필</router-link></li>
+                <li><router-link to="/login">로그아웃</router-link></li>
             </ul>
             <ul class="menu">
-                <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Service</a></li>
-                <li><a href="javascript:;">Matching</a></li>
-                <li><a href="javascript:;">Study Group</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/intro">Introduction</router-link></li>
+                <li><router-link to="/matching">Matching</router-link></li>
+                <li><router-link to="/study">Study Group</router-link></li>
             </ul>
         </div>
     </header>
