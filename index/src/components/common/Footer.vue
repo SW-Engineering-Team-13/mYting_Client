@@ -11,5 +11,6 @@ export default{
 </script>
 
 <style scoped>
-footer{border-top:1px solid #35495e; text-align:center; font-size:16px; color:#41b883; margin:100px 0 0 0;}
+footer{text-align:center; font-size:14px; color:#41b883; margin:100px 0 0 0; padding-top: 1px}
+footer{background-color: #dddddd; height: 120px}
 </style>

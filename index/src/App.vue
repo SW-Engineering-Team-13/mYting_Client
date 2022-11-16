@@ -34,4 +34,8 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
+body > div{
+  min-height: 300px;
+  background-color: #fdfdfd;
+}
 </style>
