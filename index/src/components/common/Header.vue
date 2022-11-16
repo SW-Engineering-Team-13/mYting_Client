@@ -1,12 +1,18 @@
 <template>
     <header>
-        <h1><router-link to="/"><img alt='mYting logo' src = '../../assets/logo.png' width='80'></router-link></h1>
         <div class="menuWrap">
-            <ul class="menu" style="position:absolute; top: -10px">
+            <v-img
+                :src="require('../../assets/logo.png')"
+                class="my-3"
+                contain
+                height="60"
+                
+            />
+            <ul class="menu" >
                 <li><router-link to="/login">프로필</router-link></li>
                 <li><router-link to="/login">로그아웃</router-link></li>
             </ul>
-            <ul class="menu">
+            <ul class="menu" style="top: 50px">
                 <li><router-link to="/">Home</router-link></li>
                 <li><router-link to="/intro">Introduction</router-link></li>
                 <li><router-link to="/matching">Matching</router-link></li>
