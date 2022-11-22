@@ -1,40 +1,44 @@
 <template>
-    <header>
-        <h1><router-link to="/"><img alt='mYting logo' src = '../../assets/logo.png' width='80'></router-link></h1>
-        <div class="menuWrap">
-            <ul class="menu" style="position:absolute; top: -10px">
-                <li><router-link to="/login">프로필</router-link></li>
-                <li><router-link to="/login">로그아웃</router-link></li>
-            </ul>
-            <ul class="menu">
-                <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/intro">Introduction</router-link></li>
-                <li><router-link to="/matching">Matching</router-link></li>
-                <li><router-link to="/study">Study Group</router-link></li>
-            </ul>
+    <v-row 
+    align="center"
+    justify="space-between">
+        <div>
         </div>
-    </header>
+        <div>
+            <v-btn text>
+                <router-link to="/">Home</router-link>
+            </v-btn>
+            <v-btn text>
+                <router-link to="/intro">Introduction</router-link>
+            </v-btn>
+            <v-btn text>
+                <router-link to="/matching">Matching</router-link>
+            </v-btn>
+            <v-btn text>
+                <router-link to="/study">Study Group</router-link>
+            </v-btn>
+            <v-btn>
+                <router-link to="/login">Profile</router-link>
+            </v-btn>
+            <v-btn text>
+                <router-link to="/login">Login</router-link>
+            </v-btn>
+        </div>
+    </v-row>            
 </template>
 
 <script>
-export default{
-
-}
+  export default {
+    data: () => ({
+      absolute: true,
+      overlay: false,
+    }),
+  }
 </script>
 
-<style scoped>
-header{
-    width:100%; 
-    text-align:center; 
-    position:relative; 
-    height:120px; 
-    background-color: #ffffff; 
-    box-shadow: 0px 2px 0px 0px #dddddd;}
-
-header h1{position:absolute; top:0; left:100px;}
-header ul.menu:after{display:block; clear:both; content:'';}
-header ul.menu{position:absolute; top:20px; right:50px;}
-header ul.menu li{float:left; padding:10px 20px; list-style:none;}
-
-a{text-decoration:none; color:#333;}
+<style>
+a{
+    text-decoration:none; 
+    color:#333;
+}
 </style>
