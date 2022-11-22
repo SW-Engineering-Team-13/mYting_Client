@@ -28,26 +28,4 @@ export default{
 </script>
 
 <style>
-div.banner{
-  display: flex;
-  justify-content: center;
-}
-
-div.banner-text{
-  margin-left: 10%;
-  margin-top: 7%;
-  color: white;
-  text-shadow: 2px 2px 2px #999999;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-p.main-text{
-  font-size: 32px;
-  font-weight: bold;
-}
-
-p.side-text{
-  padding: 3px 3px;
-  font-size: 12px;
-}
 </style>
