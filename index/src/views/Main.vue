@@ -4,7 +4,7 @@
   </head>
   <div class="banner">
     <v-img
-      src="../../assets/banner.jpg"
+      src="@/assets/banner.jpg"
       max-width="1280"
     >
       <div class="banner-text">

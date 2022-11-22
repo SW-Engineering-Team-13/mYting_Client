@@ -3,15 +3,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   </head>
   <v-app>
-    <v-app-bar app
-      height="80">
+    <v-app-bar 
+      absolute
+      color="#6A76AB"
+      dark
+      shrink-on-scroll
+      prominent
+      src="https://picsum.photos/1920/1080?random"
+      fade-img-on-scroll
+      scroll-target="#scrolling-techniques-3">
       <Header></Header>
     </v-app-bar>
 
     <v-main>
-      <v-container 
-        fluid
-        >
+      <v-container>
         <router-view></router-view>
       </v-container>
     </v-main>
