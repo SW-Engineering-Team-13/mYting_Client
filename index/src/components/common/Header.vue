@@ -3,9 +3,6 @@
     align="center"
     justify="space-between">
         <div>
-            <v-img
-                src="../../assets/logo.png"
-            ></v-img>
         </div>
         <div>
             <v-btn text>
@@ -22,18 +19,21 @@
             </v-btn>
             <v-btn>
                 <router-link to="/login">Profile</router-link>
-            </v-btn> 
-            <v-btn text disabled>
-                <router-link to="/login">Logout</router-link>
+            </v-btn>
+            <v-btn text>
+                <router-link to="/login">Login</router-link>
             </v-btn>
         </div>
     </v-row>            
 </template>
 
 <script>
-export default{
-
-}
+  export default {
+    data: () => ({
+      absolute: true,
+      overlay: false,
+    }),
+  }
 </script>
 
 <style>
