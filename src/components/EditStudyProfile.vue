@@ -1,0 +1,75 @@
+<template>
+  <v-container>
+    <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+    >
+    <v-col
+        cols="12"
+        md="10"
+      >
+        <v-textarea
+          v-model="name"
+          :counter="30"
+          label="스터디 이름"
+          rows="1"
+        ></v-textarea>
+      </v-col>
+
+      <v-col
+          cols="12"
+          md="10"
+        >
+          <v-textarea
+            v-model="introduction"
+            :counter="200"
+            label="스터디 소개"
+            rows="4"
+          ></v-textarea>
+        </v-col>
+
+    <v-col
+        cols="12"
+        md="10"
+      >
+        <v-textarea
+          v-model="rules"
+          :counter="400"
+          label="스터디 규칙"
+          rows="8"
+        ></v-textarea>
+      </v-col>
+
+      <v-select
+        v-model="select"
+        :items="memcount"
+        :rules="[v => !!v || '정원제한을 설정해주세요!']"
+        label="스터디 정원"
+        required
+        ></v-select>
+
+  <v-app>
+    <div>
+      <v-btn
+      value="left"
+      color="warning"
+      elevation="2"
+      small
+      @click="editDone"
+      >수정완료
+      </v-btn>
+
+      <v-btn
+      value="right"
+      color="error"
+      elevation="2"
+      small
+      @click="exit"
+      >취소
+      </v-btn>
+    </div>
+  </v-app>
+  </v-form>
+</v-container>
+</template>
