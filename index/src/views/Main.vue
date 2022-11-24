@@ -5,7 +5,8 @@
   <div class="banner">
     <v-img
       src="@/assets/banner.jpg"
-      max-width="1280"
+      max-width="1440"
+      min-width="1200"
     >
       <div class="banner-text">
         <p class="main-text">우리 학교</p>

@@ -1,7 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Main from '@/views/Main';
 import Login from '@/views/Login';
-import Introduction from '@/views/Introduction';
 import Matching from '@/views/Matching';
 import Study from '@/views/Study';
 
@@ -15,11 +14,6 @@ const routes = [
 		path:'/login'
 		,name: 'Login'
 		,component: Login
-	},
-	{
-		path:'/intro'
-		,name: 'Introduction'
-		,component: Introduction
 	},
 	{
 		path:'/matching'
