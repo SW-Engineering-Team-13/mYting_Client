@@ -31,10 +31,46 @@
               Profile
             </v-btn>
             <v-btn
-              @click="login = !login"
+              @click="login_dialog = !login_dialog"
               color="pink accent-3"
               v-model="login"
             >
+              <v-dialog
+                v-model="login_dialog"
+                width="400"
+              >
+                <v-card>
+                  <v-card-title class="text-h5">
+                    Login
+                  </v-card-title>
+                  <v-card-text>
+                    <v-row
+                      align="center">
+                      <v-col
+                        cols="12">
+                        <v-text-field placeholder="ID" />
+                      </v-col>
+                      <v-col
+                        cols="12">
+                        <v-text-field placeholder="Password" />
+                      </v-col>
+                      <v-col>
+                        <v-btn
+                          @click="login_dialog=false; login=true"
+                        >
+                          Login
+                        </v-btn>
+                      </v-col>
+                      <v-col>
+                        <v-btn
+                          @click="login_dialog=false">
+                          Register
+                        </v-btn>
+                      </v-col>
+                    </v-row>
+                  </v-card-text>
+                </v-card>
+              </v-dialog>
               <span v-if="login">Logout</span>
               <span v-else>Login</span>
             </v-btn>
@@ -104,6 +140,7 @@ export default {
 
   data: () => ({
     login: false,
+    login_dialog: false,
     overlay: true,
   }),  
 }
