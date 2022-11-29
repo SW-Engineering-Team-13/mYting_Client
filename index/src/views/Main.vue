@@ -17,6 +17,7 @@
           color="secondary"
           elevation="2"
           x-large
+          to="/matching"
         ><p class="side-text">GO!</p></v-btn>
       </div>
     </v-img>
@@ -25,6 +26,10 @@
 
 <script>
 export default{
+  data: () => ({
+      absolute: true,
+      overlay: false,
+  }),  
 }
 </script>
 
