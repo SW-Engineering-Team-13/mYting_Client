@@ -5,11 +5,11 @@
     v-model="valid"
     lazy-validation
   >
-  <v-img
-max-height="300"
-max-width="1280"
-src="@/assets/MakeGroupImage.png">
-  </v-img>
+    <v-img
+      max-height="200"
+      max-width="1280"
+      src="@/assets/MakeGroupImage.png"
+    />
     <v-col
         cols="12"
         md="10"

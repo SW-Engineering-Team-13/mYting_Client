@@ -1,8 +1,16 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Main from '@/views/Main';
-import Login from '@/views/Login';
-import Matching from '@/views/Matching';
-import Study from '@/views/Study';
+
+import Main from '@/views/HomeMain';
+import Login from '@/views/HomeLogin';
+import Matching from '@/views/HomeMatching';
+
+import StudyHome from '@/views/Study/StudyHome.vue'
+import creategroup from '@/views/Study/FormStudyGroup.vue'
+import findgroup from '@/views/Study/FindStudy.vue'
+import mystudylist from '@/views/Study/MyStudyList.vue'
+import studyprofile from '@/views/Study/StudyProfile.vue'
+import EditStudyProfile from '@/views/Study/EditStudyProfile.vue'
+import reservation from '@/views/Study/PlaceReservation.vue'
 
 const routes = [
 	{
@@ -21,10 +29,48 @@ const routes = [
 		,component: Matching
 	},
 	{
-		path:'/study'
-		,name: 'Study'
-		,component: Study
+		path: '/study',
+		name: 'studyhome',
+		component: StudyHome
 	},
+	{
+		path: '/creategroup',
+		name: 'creategroup',
+		component: creategroup
+	},
+	{
+		path: '/findgroup',
+		name: 'findgroup',
+		component: findgroup
+	},
+	{
+		path: '/mystudylist',
+		name: 'mystudylist',
+		component: mystudylist
+	},
+	{
+		path: '/studyprofile',
+		name: 'studyprofile',
+		component: studyprofile
+	},
+	{
+		path: '/studyprofileEdit',
+		name: 'EditStudyProfile',
+		component: EditStudyProfile
+	},
+	{
+		path: '/reservation',
+		name: 'reservation',
+		component: reservation
+	},
+	{
+		path: '/about',
+		name: 'about',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		// component: () => import(/* webpackChunkName: "about" */ '../views/Study/AboutView.vue')
+	}
 ];
 
 const router = createRouter({

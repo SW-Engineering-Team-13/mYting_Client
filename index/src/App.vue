@@ -23,10 +23,9 @@
               max-width="100" 
             />
           </v-col>
-          <v-col>
+          <v-col class="d-flex justify-end mb-6">
             <v-btn
               @click="overlay = true"
-              color="blue-grey darken-1"
             >
               Profile
             </v-btn>
