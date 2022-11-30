@@ -108,6 +108,7 @@
       </v-sheet>      
     </v-main>
 
+    <!-- <v-divider></v-divider>
     <v-footer
       class="d-flex justify-center mb-6"
       padless
@@ -126,7 +127,7 @@
           {{ new Date().getFullYear() }} — <strong>Made by Lonely Guys</strong>
         </v-card-text>
       </v-card>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 

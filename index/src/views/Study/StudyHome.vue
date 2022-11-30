@@ -1,4 +1,4 @@
-<template>
+<template>  
   <v-container>
     <v-row class="d-flex justify-center mb-6">
       <v-card 
@@ -31,12 +31,16 @@
       </v-card>
     </v-row>
   </v-container>
+  <Nav />
 </template>
 
 <script>
+import Nav from '@/views/Study/StudyNav.vue';
+
 export default {
+  components: {
+    Nav
+  },
   name: 'StudyHome',
-  props: {
-  }
 }
 </script>

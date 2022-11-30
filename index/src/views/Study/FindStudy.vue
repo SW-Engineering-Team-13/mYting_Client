@@ -33,4 +33,15 @@
       <v-card-text>스터디정원:1/10</v-card-text>
     </v-card>
   </v-container>
+  <Nav />
 </template>
+
+<script>
+import Nav from '@/views/Study/StudyNav.vue';
+
+export default {
+  components: {
+    Nav
+  },
+}
+</script>

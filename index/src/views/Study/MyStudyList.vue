@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-img
-  max-height="300"
+  max-height="200"
   max-width="1280"
   src="@/assets/MyStudyList.png">
     </v-img>
@@ -11,4 +11,15 @@
           <v-card-text>스터디정원: 1/10</v-card-text>
     </v-card>
   </v-container>
+  <Nav />
 </template>
+
+<script>
+import Nav from '@/views/Study/StudyNav.vue';
+
+export default {
+  components: {
+    Nav
+  },
+}
+</script>

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-img
-  max-height="300"
+  max-height="200"
   max-width="1280"
   src="@/assets/PlaceReservation.png">
     </v-img>
@@ -37,4 +37,15 @@
     </div>
   </v-app>
   </v-container>
+  <Nav />
 </template>
+
+<script>
+import Nav from '@/views/Study/StudyNav.vue';
+
+export default {
+  components: {
+    Nav
+  },
+}
+</script>
