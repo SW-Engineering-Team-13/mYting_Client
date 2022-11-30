@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="d-flex justify-center mb-6">
       <v-card 
-        width="800"
+        width="700"
         to="/creategroup"
       >
         <v-img
@@ -12,7 +12,7 @@
     </v-row>
     <v-row class="d-flex justify-center mb-6">
       <v-card 
-        width="800"
+        width="700"
         to="/findgroup"
       >
         <v-img
@@ -23,7 +23,7 @@
 
     <v-row class="d-flex justify-center mb-6">
       <v-card 
-        width="800"
+        width="700"
         to="/mystudylist"
       >
         <v-img
