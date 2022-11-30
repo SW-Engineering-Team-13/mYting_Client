@@ -22,6 +22,90 @@
       </div>
     </v-img>
   </div>
+  <v-container>
+    <v-row
+      justify="center"
+    >
+      <v-col cols="12"/>
+      <v-col
+        cols="1">
+        <p class="font-weight-bold">
+          OUR SERVICE
+        </p>
+      </v-col>
+      <v-col cols="12"/>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <v-col
+        cols="3">
+        <v-card>
+          <v-img
+            src="@/assets/intro_friend.png"
+            max-height="200"
+          />
+        </v-card>
+      </v-col>
+      <v-col
+        cols="3">
+        <v-card>
+          <v-img
+            src="@/assets/intro_date.png"
+            max-height="200"
+          />
+        </v-card>
+      </v-col>
+      <v-col
+        cols="3">
+        <v-card>
+          <v-img
+            src="@/assets/intro_study.png"
+            max-height="200"
+          />
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row
+      justify="center"
+    >
+      <v-col
+        cols="3">
+        <h5>Make Your Friends</h5>
+      </v-col>
+      <v-col
+        cols="3">
+        <h5>Find Your Soulmate</h5>
+      </v-col>
+      <v-col
+        cols="3">
+        <h5>Study with Schoolmates</h5>
+      </v-col>
+      <v-col cols="12"/>
+    </v-row>
+
+    <v-divider />
+
+    <v-row
+      justify="center"
+    >
+      <v-col cols="12"/>
+      <v-col
+        cols="1">
+        <p class="font-weight-bold">
+          HOW IT WORK
+        </p>
+      </v-col>
+      <v-col cols="12"/>
+    </v-row>
+
+  </v-container>
+  <v-footer
+    min-height="200"
+    color="grey">
+    
+  </v-footer>
 </template>
 
 <script>
