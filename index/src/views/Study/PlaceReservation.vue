@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-img
-  max-height="200"
-  max-width="1280"
-  src="@/assets/PlaceReservation.png">
+      max-height="200"
+      max-width="1280"
+      src="@/assets/PlaceReservation.png">
     </v-img>
   <a
     href="https://space.yonsei.ac.kr/"
