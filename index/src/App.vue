@@ -44,7 +44,9 @@
                   </v-card-title>
                   <v-card-text>
                     <v-row
-                      align="center">
+                      dense
+                      justify="center"
+                      >
                       <v-col
                         cols="12">
                         <v-text-field placeholder="ID" />
@@ -59,10 +61,11 @@
                         >
                           Login
                         </v-btn>
-                      </v-col>
-                      <v-col>
                         <v-btn
-                          @click="login_dialog=false">
+                          @click="login_dialog=false"
+                          style="margin-left:10px;"
+                          color="blue"
+                        >
                           Register
                         </v-btn>
                       </v-col>
