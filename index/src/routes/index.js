@@ -1,9 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Main from '../components/common/Main';
-import Login from '../components/common/Login';
-import Introduction from '../components/common/Introduction';
-import Matching from '../components/matching/Start';
-import Study from '../components/study/Start';
+import Main from '@/views/Main';
+import Login from '@/views/Login';
+import Matching from '@/views/Matching';
+import Study from '@/views/Study';
 
 const routes = [
 	{
@@ -15,11 +14,6 @@ const routes = [
 		path:'/login'
 		,name: 'Login'
 		,component: Login
-	},
-	{
-		path:'/intro'
-		,name: 'Introduction'
-		,component: Introduction
 	},
 	{
 		path:'/matching'

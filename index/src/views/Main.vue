@@ -4,8 +4,9 @@
   </head>
   <div class="banner">
     <v-img
-      src="../../assets/banner.jpg"
-      max-width="1280"
+      src="@/assets/banner.jpg"
+      max-width="1440"
+      min-width="1200"
     >
       <div class="banner-text">
         <p class="main-text">우리 학교</p>
@@ -16,6 +17,7 @@
           color="secondary"
           elevation="2"
           x-large
+          to="/matching"
         ><p class="side-text">GO!</p></v-btn>
       </div>
     </v-img>
@@ -24,6 +26,10 @@
 
 <script>
 export default{
+  data: () => ({
+      absolute: true,
+      overlay: false,
+  }),  
 }
 </script>
 
