@@ -1,5 +1,7 @@
 <template>  
-  <v-container>
+  <v-container
+    style="margin-top: 20px;"
+  >
     <v-row class="d-flex justify-center mb-6">
       <v-card 
         width="700"
