@@ -39,29 +39,29 @@
       justify="center"
     >
       <v-col
-        cols="3">
+        cols="2">
         <v-card>
           <v-img
             src="@/assets/intro_friend.png"
-            max-height="200"
+            max-height="150"
           />
         </v-card>
       </v-col>
       <v-col
-        cols="3">
+        cols="2">
         <v-card>
           <v-img
             src="@/assets/intro_date.png"
-            max-height="200"
+            max-height="150"
           />
         </v-card>
       </v-col>
       <v-col
-        cols="3">
+        cols="2">
         <v-card>
           <v-img
             src="@/assets/intro_study.png"
-            max-height="200"
+            max-height="150"
           />
         </v-card>
       </v-col>
@@ -71,15 +71,15 @@
       justify="center"
     >
       <v-col
-        cols="3">
+        cols="2">
         <h5>Make Your Friends</h5>
       </v-col>
       <v-col
-        cols="3">
+        cols="2">
         <h5>Find Your Soulmate</h5>
       </v-col>
       <v-col
-        cols="3">
+        cols="2">
         <h5>Study with Schoolmates</h5>
       </v-col>
       <v-col cols="12"/>
@@ -94,17 +94,24 @@
       <v-col
         cols="1">
         <p class="font-weight-bold">
-          HOW IT WORK
+          HOW IT WORKS
         </p>
       </v-col>
       <v-col cols="12"/>
     </v-row>
+    <v-row
+      justify="center"
+    >
+      <v-col>
+        <v-img
+          src="@/assets/MBTI.png"
+          max-height="250"
+        />
+      </v-col>
+    </v-row>
 
   </v-container>
-  <v-footer
-    min-height="200"
-    color="grey">
-    
+  <v-footer>
   </v-footer>
 </template>
 

@@ -12,6 +12,10 @@ import studyprofile from '@/views/Study/StudyProfile.vue'
 import EditStudyProfile from '@/views/Study/EditStudyProfile.vue'
 import reservation from '@/views/Study/PlaceReservation.vue'
 
+import MatchHome from '@/views/Matching/MatchHome.vue'
+import MatchResult from '@/views/Matching/MatchResult.vue'
+import MatchWait from '@/views/Matching/MatchWait.vue'
+
 const routes = [
 	{
 		path: '/'
@@ -63,14 +67,22 @@ const routes = [
 		name: 'reservation',
 		component: reservation
 	},
+
 	{
-		path: '/about',
-		name: 'about',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		// component: () => import(/* webpackChunkName: "about" */ '../views/Study/AboutView.vue')
-	}
+		path: '/matchhome',
+		name: 'MatchHome',
+		component: MatchHome
+	},
+	{
+		path: '/matchresult',
+		name: 'MatchResult',
+		component: MatchResult
+	},
+	{
+		path: '/matchwait',
+		name: 'MatchWait',
+		component: MatchWait
+	},
 ];
 
 const router = createRouter({
