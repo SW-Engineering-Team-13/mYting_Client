@@ -100,7 +100,11 @@ export default {
     return {
       memcount:[
         '2','3','4','5','6'
-      ]
+      ],
+      name: "",
+      introduction: "",
+      rules: "",
+      select: 2,
     }
   },
   components: {
