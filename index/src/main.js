@@ -1,12 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import router from './routes'
-import { loadFonts } from './plugins/webfontloader'
+import { createApp } from "vue";
+import App from "./App.vue";
+import vuetify from "./plugins/vuetify";
+import router from "./routes";
+import { loadFonts } from "./plugins/webfontloader";
+import axios from "axios";
 
-loadFonts()
+createApp.protoType.$http = axios;
 
-createApp(App)
-  .use(vuetify)
-  .use(router)
-  .mount('#app')
+loadFonts();
+
+createApp(App).use(vuetify).use(router).mount("#app");
