@@ -1,66 +1,126 @@
 <template>
-  <div id="Matching">
-    <div class="My">
-      My MBTI:
-      <!--db받아오기-->
-      <br /><br />
-    </div>
-    <div class="Other">
-      Other MBTI:
-      <!--db받아오기-->
-      <br /><br />
-    </div>
-    <div class="Sex">
-      <v-app>
-        <v-container>
-          <v-stepper v-model="e6" vertical>
-            <v-stepper-step :complete="e6 > 1" step="1" editable>
-              Select Sex
-            </v-stepper-step>
-            <v-stepper-content step="1">
-              <v-select
-                :items="userTypeList"
-                placeholder="select"
-                v-model="userType"
-              ></v-select>
-              <v-btn color="info" @click="e6 = 2" text>다음</v-btn>
-              <v-btn text @click="e6">Cancel</v-btn>
-            </v-stepper-content>
-            <v-stepper-content step="2">
-              <v-btn :href="`./wait`" target="Matching Start">Matching Start</v-btn>
-            </v-stepper-content>
-          </v-stepper>
-        </v-container>
-      </v-app>
-    </div>
-    <br /><br />
-  </div>
+  <v-container>
+    <v-row
+      class="d-flex justify-center mb-6"
+      dense
+    >
+      <v-col
+        cols="6"
+      >
+        <v-card
+          elevation="4"
+          style="padding-top: 20px;"
+        >
+          <v-row class="text-center" align="center">
+            <v-col>나의 MBTI 유형</v-col>
+            <v-col>
+              <v-chip
+                class="ma-2"
+                color="cyan"
+                label
+              >
+                INTJ
+              </v-chip>
+            </v-col>
+          </v-row>
+          <v-row class="text-center" align="center">
+            <v-col>나와 잘 맞는 MBTI 유형</v-col>
+            <v-col>
+              <v-chip
+                class="ma-2"
+                color="green"
+                label
+              >
+                INTJ
+              </v-chip>
+              <v-chip
+                class="ma-2"
+                color="green"
+                label
+              >
+                INTJ
+              </v-chip>
+              <v-chip
+                class="ma-2"
+                color="green"
+                label
+              >
+                INTJ
+              </v-chip>
+            </v-col>
+          </v-row>
+          <v-row class="text-center" align="center">
+            <v-col>매칭하고 싶은 성별</v-col>
+            <v-col>
+              <v-tabs align-tabs="center">
+                <v-tab>
+                  남자
+                </v-tab>
+                <v-tab>
+                  여자
+                </v-tab>
+              </v-tabs>              
+            </v-col>
+          </v-row>
+          <v-divider style="margin-top:20px" />
+          <v-row 
+            class = "d-flex justify-center mb-6"
+            style="margin-top: 20px;"
+          >
+            <v-btn 
+              color="primary"
+              @click="result_dialog=true;"
+            >
+              Matching Start
+            </v-btn>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container> 
+  <v-dialog
+    v-model="result_dialog"
+    width="300"
+    height="250"
+    persistent
+  >
+    <v-card
+      height="400"  
+    >
+      <v-card-title class="text-h5">
+        대기열 등록 완료!
+      </v-card-title>
+      <v-card-text>
+        매칭 완료시 상대방의 프로필과 
+        <br>
+        함께 쪽지로 안내됩니다.
+        <br><br>
+        좋은 인연 만드세요!
+      </v-card-text>
+      <v-card-actions>
+        <v-row
+          justify="center"
+        >
+          <v-btn
+            width="50%"
+            color="primary"
+            to="/"
+            @click="result_dialog=false"
+          >
+            확인
+          </v-btn>
+        </v-row>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      e6: 1,
-      currentStep: 1,
-      userType: '',
-      userTypeList: ['남자', '여자', '랜덤']
+      result_dialog: false,
     }
   }
 }
 </script>
-
-<style>
-#Matching {
-  text-align: left;
-  font-size: 25pt;
-}
-
-.Start {
-  width: 275px;
-  height: 50px;
-  font-size: 25pt;
-  margin: auto;
-  display: block;
-}
-</style>

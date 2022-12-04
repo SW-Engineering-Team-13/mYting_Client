@@ -1,8 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 import Main from '@/views/HomeMain';
-import Login from '@/views/HomeLogin';
-import Matching from '@/views/HomeMatching';
 
 import StudyHome from '@/views/Study/StudyHome.vue'
 import creategroup from '@/views/Study/FormStudyGroup.vue'
@@ -21,16 +19,6 @@ const routes = [
 		path: '/'
 		,name: 'Main'
 		,component: Main
-	},
-	{
-		path:'/login'
-		,name: 'Login'
-		,component: Login
-	},
-	{
-		path:'/matching'
-		,name: 'Matching'
-		,component: Matching
 	},
 	{
 		path: '/study',
@@ -69,7 +57,7 @@ const routes = [
 	},
 
 	{
-		path: '/matchhome',
+		path: '/matching',
 		name: 'MatchHome',
 		component: MatchHome
 	},

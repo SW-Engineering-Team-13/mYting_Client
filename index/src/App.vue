@@ -17,10 +17,15 @@
           align="center"
         >
           <v-col>
-            <v-img 
-              src="@/assets/logo.png" 
-              max-width="100" 
-            />
+            <v-card
+              width="100"
+              to="/"
+              flat
+            >
+              <v-img 
+                src="@/assets/logo.png" 
+              />
+            </v-card>
           </v-col>
           <v-col class="d-flex justify-end mb-6">
             <v-btn
@@ -88,18 +93,21 @@
           <v-col
             cols="12">
             <v-text-field 
-              label="ID" />
+              label="ID" 
+              v-model="login_data.id"
+            />
           </v-col>
           <v-col
             cols="12">
             <v-text-field 
               label="Password" 
               type="password"
+              v-model="login_data.pw"
           />
           </v-col>
           <v-col>
             <v-btn
-              @click="login_dialog = false; login=true"  
+              @click="login=true; loginBtn();"  
             >
                 Login
             </v-btn>
@@ -193,48 +201,39 @@
 
   <v-dialog
     v-model="profile_dialog"
-    width="1200"
+    width="600"
   >
     <v-card
-      height="800"
+      height="600"
     >
-      <v-row>
-        <v-col
-          cols="4"
+      <v-card-title
+        align="center"
+      >
+        <v-avatar
+          size="200"
         >
-          <v-card
-            color="grey"
-            height="100%"
-          >
-            <v-row
-              justify="center"
-              style="padding-top: 50px; padding-bottom: 50px;"
-            >
-              <v-avatar
-                size="200"
-                color="white"
-              >
-                <v-img
-                  src="@/assets/intro_friend.png"
-                />
-              </v-avatar>
-            </v-row>
-            <v-row
-              justify="center"
-            >
-              <h5>"프로필 메시지를 입력해주세요!"</h5>
-            </v-row>
-          </v-card>
-        </v-col>
-        <v-col
-          cols="8">
-        </v-col>
-      </v-row>
+          <v-img
+            src="@/assets/INTJ.png"
+          />
+        </v-avatar>
+      </v-card-title>
+      <v-card-text>
+
+      </v-card-text>
+      <v-card-actions>
+        <v-btn>
+          Message
+        </v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+import { assertExpressionStatement } from '@babel/types';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
+import axios from 'axios';
+
 export default {
   name: 'App',
 
@@ -247,7 +246,24 @@ export default {
     register_dialog: false,
     profile_dialog: false,
     overlay: true,
+    login_data: {
+      id: '',
+      pw: '',
+    }
   }),  
+
+  methods: {
+    loginBtn() {
+      axios.get('http://localhost:8080/', {
+        'id': this.login_data.id,
+        'pw': this.login_data.pw,
+      }).then(res => {
+        console.log(res);
+      }).then(err => {
+        console.log(err);
+      })
+    }
+  }
 }
 </script>
 
