@@ -75,7 +75,24 @@
         </v-container>
       </v-sheet>      
     </v-main>
+    <!-- <v-footer    >
+      <v-card
+        height="100"
+        width="100%"
+        color="grey-lighten-3"
+        flat
+        align="end"
+      >
+        <v-card-title>
+          2022-2. Software Engineering Project
+        </v-card-title>
+        <v-card-text>
+          Made by Lonely Guys
+        </v-card-text>
+      </v-card>
+    </v-footer> -->
   </v-app>
+
 
   <v-dialog
     v-model="login_dialog"
