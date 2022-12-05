@@ -110,16 +110,19 @@ export default {
     MakeGroup() {
       this.$http
         .post("/api/createstudy", {
-          uid: uid,
+          uid: $route.uid,
           studyname: this.name,
         })
         .then((res) => {
           this.handle_toggle();
-          window.open("/study", "_blank");
+          this.push();
         });
     },
     handle_toggle() {
       this.is_show = !this.is_show;
+    },
+    push() {
+      this.$router.push({ name: "study", params: { uid: $route.uid } });
     },
   },
 };
