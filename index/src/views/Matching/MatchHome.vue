@@ -30,22 +30,9 @@
                 class="ma-2"
                 color="green"
                 label
+                v-for="mbti in good_mbti"
               >
-                INTJ
-              </v-chip>
-              <v-chip
-                class="ma-2"
-                color="green"
-                label
-              >
-                INTJ
-              </v-chip>
-              <v-chip
-                class="ma-2"
-                color="green"
-                label
-              >
-                INTJ
+                {{mbti}}
               </v-chip>
             </v-col>
           </v-row>
@@ -120,6 +107,7 @@ export default {
   data () {
     return {
       result_dialog: false,
+      good_mbti: [ 'ESFP', 'ESTP', 'ISFP']
     }
   }
 }

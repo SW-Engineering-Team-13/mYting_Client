@@ -358,9 +358,9 @@
             궁합 TOP 3
           </v-col>
           <v-col cols="6">
-            <v-chip color="pink">aaaa</v-chip>
-            <v-chip color="pink">aaaa</v-chip>
-            <v-chip color="pink">aaaa</v-chip>
+            <v-chip color="pink">ESFP</v-chip>
+            <v-chip color="pink">ESTP</v-chip>
+            <v-chip color="pink">ISFP</v-chip>
           </v-col>
         </v-row>
       </v-card-text>
