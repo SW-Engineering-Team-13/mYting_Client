@@ -29,17 +29,23 @@
           </v-col>
           <v-col class="d-flex justify-end mb-6">
             <v-btn
+              v-if="login"
               @click="(profile_dialog = !profile_dialog)"
             >
               Profile
             </v-btn>
             <v-btn
+              v-if="login"
+            >
+              Message
+            </v-btn>
+            <v-btn
               @click="login_dialog = !login_dialog"
               color="pink accent-3"
               v-model="login"
+              v-if="login === false"
             >
-              <span v-if="login">Logout</span>
-              <span v-else>Login</span>
+              <span>Login</span>
             </v-btn>
           </v-col>
         </v-row>
@@ -124,7 +130,7 @@
           </v-col>
           <v-col>
             <v-btn
-              @click="login=true; loginBtn();"  
+              @click="login=true; login_dialog=false;"  
             >
                 Login
             </v-btn>
@@ -150,20 +156,23 @@
         Register
       </v-card-title>
       <v-card-text>
-        <v-row
-          dense
-          justify="center"
-          >
+        <v-row>
           <v-col
             cols="12">
-            <v-text-field label="ID" />
+            <v-text-field 
+              label="ID" 
+              v-model="register.id"
+            />
           </v-col>
+        </v-row>
+        <v-row>
           <v-col
             cols="6"
           >
             <v-text-field 
               label="Password" 
               type="password"
+              v-model="register.pw"
             />
           </v-col>
           <v-col
@@ -171,48 +180,100 @@
             <v-text-field 
               label="Password Check"
               type="password"
+              v-model="register.pw_check"
             />
           </v-col>
+        </v-row>
+        <v-row>
           <v-divider />
           <v-col
             cols="12">
-            <v-text-field label="Nick Name" />
-          </v-col>          
-          <v-col
-            cols="12">
-            <v-text-field label="MBTI" />
-          </v-col>          
-          <v-col
-            cols="6">
-            <v-text-field label="Sex" />
-          </v-col>          
-          <v-col
-            cols="6">
-            <v-text-field label="Major" />
-          </v-col>          
-          <v-col
-            cols="6">
-            <v-text-field label="Student Number" />
-          </v-col>          
-          <v-col
-            cols="6">
-            <v-text-field label="Grade" />
-          </v-col>          
+            <v-text-field 
+              label="Nick Name" 
+              v-model="register.nickname"
+            />
+          </v-col>   
+        </v-row>
+        <v-row>
           <v-col
             cols="12">
             <v-text-field label="Profile Message" />
           </v-col>          
-          <v-col>
-            <v-btn
-              style="margin-left:10px;"
-              color="blue"
-              @click="register_dialog=false"
-            >
-                Register
-            </v-btn>
+        </v-row>
+        <v-row>
+          <v-col
+            cols="6">
+            <v-select
+              label="Major" 
+              :items="register.major"
+            />
+          </v-col>
+          <v-col
+            cols="6">
+            <v-select
+              label="Sex" 
+              :items="register.sex"
+            />
           </v-col>
         </v-row>
+        <v-row>
+          <v-col
+            cols="6">
+            <v-select
+              label="Student Number" 
+              :items="register.student_number"
+            />
+          </v-col>          
+          <v-col
+            cols="6">
+            <v-select
+              label="Grade" 
+              :items="register.grade"
+            />
+          </v-col>   
+        </v-row>
+        <v-row>
+          <v-col
+            align-self="center"
+            cols="6"
+          >
+            <p style="text-align: center;">MBTI</p>
+          </v-col>
+          <v-col cols="6">
+            <v-tabs slider-color="red">
+              <v-tab>I</v-tab>
+              <v-tab>E</v-tab>
+            </v-tabs>
+            <v-tabs slider-color="orange">
+              <v-tab>S</v-tab>
+              <v-tab>N</v-tab>
+            </v-tabs>
+            <v-tabs slider-color="yellow">
+              <v-tab>T</v-tab>
+              <v-tab>F</v-tab>
+            </v-tabs>
+            <v-tabs slider-color="green">
+              <v-tab>J</v-tab>
+              <v-tab>P</v-tab>
+            </v-tabs>
+          </v-col>
+        </v-row>        
       </v-card-text>
+      <v-card-actions>
+        <v-row
+          justify="center"
+        >
+          <v-btn
+            width="40%"
+            height="40"
+            style="margin-left:10px;"
+            color="blue"
+            @click="register_dialog=false"
+          >
+              Register
+          </v-btn>
+        </v-row>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 
@@ -223,32 +284,103 @@
     <v-card
       height="600"
     >
-      <v-card-title
-        align="center"
-      >
-        <v-avatar
-          size="200"
+      <v-card-title>
+        <v-row
+          justify="center"
         >
-          <v-img
-            src="@/assets/INTJ.png"
-          />
-        </v-avatar>
+          <v-avatar
+            size="200"
+          >
+            <v-img
+              src="@/assets/INTJ.png"
+            />
+          </v-avatar>
+        </v-row>
+        <v-row
+          justify="center"
+        >
+          <v-chip
+            class="ma-2"
+            color="blue"
+            label
+          >
+            {{user_info.nickname}}
+          </v-chip>
+        </v-row>
+        <v-row
+          justify="center"
+          style="font-size: medium; margin-top: 10px; margin-bottom: 10px;"
+        >
+          " {{user_info.profile_message}} "
+        </v-row>
       </v-card-title>
-      <v-card-text>
-
+      <v-divider />
+      <v-card-text align="center">
+        <v-row justify="center">
+          <v-col cols="3">
+            Sex
+          </v-col>
+          <v-col cols="3">
+            <v-chip color="green">{{user_info.sex}}</v-chip>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="3">
+            Major
+          </v-col>
+          <v-col cols="3">
+            <v-chip color="green">{{user_info.major}}</v-chip>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="3">
+            학번
+          </v-col>
+          <v-col cols="3">
+            <v-chip color="green">{{user_info.student_number}}</v-chip>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="3">
+            Grade
+          </v-col>
+          <v-col cols="3">
+            <v-chip color="green">{{user_info.grade}}</v-chip>
+          </v-col>
+        </v-row>
+        <v-row style="margin-top:10px; margin-bottom:10px;">
+          <v-divider></v-divider>
+        </v-row>
+        <v-row
+          justify="center"
+        >
+          <v-col cols="3">
+            궁합 TOP 3
+          </v-col>
+          <v-col cols="6">
+            <v-chip color="pink">aaaa</v-chip>
+            <v-chip color="pink">aaaa</v-chip>
+            <v-chip color="pink">aaaa</v-chip>
+          </v-col>
+        </v-row>
       </v-card-text>
       <v-card-actions>
-        <v-btn>
-          Message
-        </v-btn>
+        <v-row 
+          justify="center"
+        >
+          <v-btn
+            width="40%"
+            elevation="1"
+          >
+            Send Message
+          </v-btn>
+        </v-row>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
-import { assertExpressionStatement } from '@babel/types';
-import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import axios from 'axios';
 
 export default {
@@ -266,6 +398,26 @@ export default {
     login_data: {
       id: '',
       pw: '',
+    },
+    user_info: {
+      nickname: '밥친구',
+      profile_message: '밥 같이 먹어요. 우리. 그대만의 밥친구가 되어드릴게요.',
+      sex: '남자',
+      major: '소프트웨어학부',
+      student_number: '2019',
+      grade: '4',
+    },
+    register: {
+      id: '',
+      pw: '',
+      pw_check: '',
+      nickname: '',
+      MBTI: '',
+      sex: ['남자', '여자'],
+      major: ['소프트웨어학부', '의공학부', '디자인예술학부', '디지털헬스케어'],
+      student_number: ['2018', '2019', '2020', '2021', '2022', '2023'],
+      grade: ['1', '2', '3', '4', '5', '6'],
+      profile_message: ''
     }
   }),  
 
