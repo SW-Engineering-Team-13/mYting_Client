@@ -119,6 +119,7 @@
     </v-row>
     <v-row
       justify="center"
+      style="margin-bottom: 20px;"
     >
       <v-col cols="4">
         <v-img
@@ -136,6 +137,38 @@
             style="opacity: 80%"
           >
             <h5>MBTI based Matching System</h5>
+          </v-card-title>
+          <v-card-text
+            style="opacity: 60%"
+          >
+            <br>
+            <p>mYting 서비스는 당신의 MBTI 유형에 따라 최적의 상대를 매칭해주는 서비스입니다.</p><br>
+            <p>매칭을 신청하면, 미리 설정된 MBTI 궁합 테이블에 따라 당신의 유형과 궁합이 가장 잘 맞는 상위 3개의 MBTI 유형의 사람들과 매칭해 그들의 프로필을 전송해줍니다.</p><br>
+            <p>쪽지를 통해 마음을 나누고 소울메이트로 발전할 수 있습니다.</p><br>
+            <p>mYting을 통해 연세대 미래캠퍼스 학우들과 행복한 School Life를 즐겨보세요.</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <v-col cols="4">
+        <v-img
+          src="@/assets/intro_study.jpg"
+          max-height="250"
+        />
+      </v-col>
+      <v-col 
+        cols="4"
+      >
+        <v-card
+          flat
+        >
+          <v-card-title
+            style="opacity: 80%"
+          >
+            <h5>Find Your Study Group</h5>
           </v-card-title>
           <v-card-text
             style="opacity: 60%"
