@@ -5,6 +5,7 @@
         <v-textarea
           v-model="name"
           :counter="30"
+          :rules="nameRules"
           label="스터디 이름"
           rows="1"
         ></v-textarea>
@@ -14,6 +15,7 @@
         <v-textarea
           v-model="introduction"
           :counter="200"
+          :rules="introductionRules"
           label="스터디 소개"
           rows="4"
         ></v-textarea>
@@ -23,6 +25,7 @@
         <v-textarea
           v-model="rules"
           :counter="400"
+          :rules="rulesRules"
           label="스터디 규칙"
           rows="8"
         ></v-textarea>

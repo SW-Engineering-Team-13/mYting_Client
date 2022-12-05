@@ -18,6 +18,7 @@
         <v-textarea
           v-model="place"
           :counter="30"
+          :rules="placeRules"
           label="대관 장소 입력"
           rows="2"
         />
@@ -51,6 +52,10 @@ export default {
   data() {
     return {
       place: "",
+      placeRules: [
+        (v) => !!v || "스터디 이름을 적으세요",
+        (v) => (v && v.length <= 30) || "장소는 30자 이내여야 합니다.",
+      ],
       is_show: false,
     };
   },
