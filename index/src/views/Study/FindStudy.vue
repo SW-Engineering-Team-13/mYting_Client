@@ -61,7 +61,7 @@
                           color="blue"
                           cols="3"
                         >
-                          <v-btn>참가하기</v-btn>
+                          <v-btn color="blue">참가하기</v-btn>
                         </v-col>
                       </v-row>
                     </v-card-title>
@@ -89,7 +89,6 @@
           </v-container>
         </v-card>
       </v-col>
-
     </v-row>
   </v-container>
   <Nav />
@@ -131,7 +130,7 @@ export default {
           intro: '같이 공부해요~',
           rules: '작심삼일 안하기',
           capacity: 4,
-          participants: ['ESTJ']
+          participants: ['INTJ']
         },
       ]
     }
