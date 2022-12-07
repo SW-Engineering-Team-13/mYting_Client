@@ -36,6 +36,7 @@
             </v-btn>
             <v-btn
               v-if="login"
+              @click="(message_dialog= !message_dialog)"
             >
               Message
             </v-btn>
@@ -378,6 +379,116 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
+  
+  <v-dialog
+    v-model="message_dialog"
+    width="450"
+  >
+    <v-card
+      height="600"
+    >
+      <v-card-title class="text-h5">
+          Message
+      </v-card-title>
+      <v-divider />
+      <v-card-text>
+        <v-list>
+          <v-list-item
+            v-for="message in messages"
+          >
+            <v-list-item-title
+              style="padding-bottom: 10px"
+            >
+              <v-chip 
+                label 
+                color="blue"
+                @click="(message_test_dialog=true)"
+              >
+                {{message.sender}}
+              </v-chip>
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              <v-row
+                align="center"
+                style="padding-bottom:5px;"
+              >
+                <v-col cols="9">{{message.thumbnail}}</v-col>
+                <v-col cols="3">{{message.date}}</v-col>
+              </v-row>
+            </v-list-item-subtitle>
+            <v-divider />
+          </v-list-item>
+        </v-list>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
+
+  <v-dialog
+    v-model="message_test_dialog"
+    width="400"
+  >
+    <v-card
+      height="500"
+    >
+      <v-card-title class="text-h5">
+          "엄지곤듀" 님과의 쪽지
+      </v-card-title>
+      <v-divider />
+      <v-card-text>
+        <v-row
+          align="center"
+        >
+          <v-col
+            cols="9"
+          >
+            <v-text-field
+              placeholder="메시지를 입력해주세요."
+              v-model="input_msg"
+            />
+          </v-col>
+          <v-col
+            cols="3"
+          >
+            <v-btn
+              @click="send_msg()"
+            >
+              보내기
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+          <v-list>
+            <v-list-item
+              v-for="message in message_test"
+            >
+              <v-list-item-title
+                style="padding-bottom: 10px"
+              >
+                <v-chip 
+                  label 
+                  color="blue"
+                >
+                  {{message.sender}}
+                </v-chip>
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                <v-row
+                  align="center"
+                  style="padding-bottom:5px;"
+                >
+                  <v-col cols="9">{{message.detail}}</v-col>
+                  <v-col cols="3">{{message.date}}</v-col>
+                </v-row>
+              </v-list-item-subtitle>
+              <v-divider />
+            </v-list-item>
+          </v-list>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -394,7 +505,8 @@ export default {
     login_dialog: false,
     register_dialog: false,
     profile_dialog: false,
-    overlay: true,
+    message_dialog: false,
+    message_test_dialog: false,
     login_data: {
       id: '',
       pw: '',
@@ -418,7 +530,37 @@ export default {
       student_number: ['2018', '2019', '2020', '2021', '2022', '2023'],
       grade: ['1', '2', '3', '4', '5', '6'],
       profile_message: ''
-    }
+    },
+    messages: [
+      {
+        sender: 'Admin',
+        date: '2022.12.07  12:00',
+        thumbnail: '가입을 축하드립니다!'
+      },
+      {
+        sender: '엄지곤듀',
+        date: '2022.12.07  14:30',
+        thumbnail: '매칭 완료. 대화를 나눠보세요!'
+      },
+    ],
+    message_test:[
+      {
+        sender: '엄지곤듀',
+        date: '2022.12.07  14:30',
+        detail: '매칭 완료. 대화를 나눠보세요!',
+      },
+      {
+        sender: '엄지곤듀',
+        date: '2022.12.07  14:30',
+        detail: '안녕하세요 ^^',
+      },
+      {
+        sender: '나',
+        date: '2022.12.07  14:30',
+        detail: '긴말 안한다. 당장 만나자.',
+      },
+    ],
+    input_msg: '',
   }),  
 
   methods: {
@@ -430,6 +572,17 @@ export default {
         console.log(res);
       }).then(err => {
         console.log(err);
+      })
+    },
+    send_msg() {
+      const cur_sender='나';
+      const cur_date='2022.12.07  14:30';
+      const cur_detail=this.input_msg;
+
+      this.message_test.append({
+        sender: cur_sender,
+        date: cur_date,
+        detail: cur_detail,
       })
     }
   }

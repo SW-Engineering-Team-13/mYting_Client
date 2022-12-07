@@ -16,8 +16,8 @@
     </p>
     <v-card class="StudyMember" max-width="300">
       <v-card-title>이름:</v-card-title>
-        <v-card-text>학번:</v-card-text>
-          <v-card-text>mbti:</v-card-text>
+      <v-card-text>학번:</v-card-text>
+      <v-card-text>mbti:</v-card-text>
     </v-card>
   </v-container>
 </template>
