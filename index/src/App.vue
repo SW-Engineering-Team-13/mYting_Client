@@ -478,7 +478,7 @@
                   style="padding-bottom:5px;"
                 >
                   <v-col cols="9">{{message.detail}}</v-col>
-                  <v-col cols="3">{{message.date}}</v-col>
+                  <v-col cols="3" style="font-size: 10px">{{message.date}}</v-col>
                 </v-row>
               </v-list-item-subtitle>
               <v-divider />
@@ -534,29 +534,29 @@ export default {
     messages: [
       {
         sender: 'Admin',
-        date: '2022.12.07  12:00',
+        date: '2022.12.06  19:28',
         thumbnail: '가입을 축하드립니다!'
       },
       {
         sender: '엄지곤듀',
-        date: '2022.12.07  14:30',
+        date: '2022.12.06  19:30',
         thumbnail: '매칭 완료. 대화를 나눠보세요!'
       },
     ],
     message_test:[
       {
         sender: '엄지곤듀',
-        date: '2022.12.07  14:30',
+        date: '2022.12.06  14:30',
         detail: '매칭 완료. 대화를 나눠보세요!',
       },
       {
         sender: '엄지곤듀',
-        date: '2022.12.07  14:30',
+        date: '2022.12.06  14:30',
         detail: '안녕하세요 ^^',
       },
       {
         sender: '나',
-        date: '2022.12.07  14:30',
+        date: '2022.12.06  14:31',
         detail: '긴말 안한다. 당장 만나자.',
       },
     ],
